@@ -1,19 +1,34 @@
 let s;
 let scl = 20;
 let food;
-
+let width = 600;
+let height = 600;
 
 function setup(){
-	createCanvas(800,800);
-	s = new Snake();
+	createCanvas(600,600);
+        s = new Snake();
+        frameRate(5);
+        foodLocation();
 
 }
 
+
+function foodLocation(){
+        let cols = floor(width / scl);
+        let rows = floor(height / scl);
+        food = createVector(floor(random(cols)), floor(random(rows)));
+        food.mult(scl);
+
+}
 function draw(){
-	background(72,66,245);
+        background(158,199,12);
+        if(s.eat(food)){
+                foodLocation();
+        }
 	s.update();
-	s.show();
-    frameRate(4);
+        s.show();
+        s.death();
+        rect(food.x, food.y, scl, scl);
 
 }
 
