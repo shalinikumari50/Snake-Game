@@ -59,19 +59,8 @@ this.death = function(){
 
 	this.wall =function(){
 
-//		if(dtop<1){
-//			this.y = 780;
-//		}
-//		if(dbottom<1){
-//			this.y = 0;
-//		}
-//		if(dleft<1){
-//			this.x = 780;
-//		}
-//		if(dright<1){
-//			this.x = 0;
-//		}
-//	}
+
+
 
 		if(this.y === 0){
 			this.y = 560;
